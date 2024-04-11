@@ -9,7 +9,7 @@ jest.mock('./core/api/axiosWrapper');
 
 describe('GET /', () => {
     it('responds with 200', async () => {
-        jest.spyOn(axiosWrapper, "get").mockReturnValue(of(5));
+        jest.spyOn(axiosWrapper, "get").mockReturnValue(of("5"));
         const response = await request(app).get('/');
         expect(response.status).toBe(200);
         expect(response.text).toBe("5");
